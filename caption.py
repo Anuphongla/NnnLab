@@ -19,7 +19,7 @@ def generate_captions(menu: str, price: str) -> list[str]:
     menu_text = menu if menu else "เมนูเด็ด"
 
     return [
-        f"ลองชิม {menu_text} ที่ MilkLab กันนะคะ 🧁 \nราคาน่ารักแค่ {price} เท่านั้นเอง ฟินคุ้มทุกคำเลย",
+        f"ลองชิม {menu_text} ที่ Nnnab Cafe กันนะคะ 🧁 \nราคาน่ารักแค่ {price} เท่านั้นเอง ฟินคุ้มทุกคำเลย",
         f"เมนูใหม่ของเรา: {menu_text} — {price} \nสวย เรียบง่าย แต่รสชาตินี่ใช่เลย",
         f"สายคาเฟ่จ๋า บอกเลยว่า {menu_text} {price} นี้ต้องลอง 💫 \nคาเฟ่สไตล์ Chill ที่จะทำให้วันธรรมดาของคุณสนุกขึ้น",
     ]
@@ -27,10 +27,10 @@ def generate_captions(menu: str, price: str) -> list[str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="สร้างแคปชั่น IG ภาษาไทยแบบเป็นกันเองสำหรับ MilkLab Cafe"
+        description="สร้างแคปชั่น IG ภาษาไทยแบบเป็นกันเองสำหรับ Nnnab Cafe"
     )
-    parser.add_argument("--menu", "-m", help="ชื่อเมนู (เช่น กาแฟลาเต้ชีสเค้ก)")
-    parser.add_argument("--price", "-p", help="ราคา (เช่น 159)")
+    parser.add_argument("--menu", "-m", help="ชื่อเมนู ")
+    parser.add_argument("--price", "-p", help="ราคา ")
     args = parser.parse_args()
 
     menu = args.menu
@@ -39,7 +39,7 @@ def main() -> None:
     if not menu:
         menu = input("พิมพ์ชื่อเมนูที่ต้องการให้สร้างแคปชั่น: ").strip()
     if not price:
-        price = input("พิมพ์ราคาของเมนู (เช่น 159): ").strip()
+        price = input("พิมพ์ราคาของเมนู : ").strip()
 
     captions = generate_captions(menu, price)
 
